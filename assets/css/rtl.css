@@ -1,0 +1,18 @@
+/* ==========================================================================
+   RTL (Right-to-Left) Styles
+   ========================================================================== */
+
+html[dir="rtl"] {
+  /* Adjust spacing that depends on direction */
+}
+
+html[dir="rtl"] .text-left { text-align: right; }
+html[dir="rtl"] .text-right { text-align: left; }
+
+html[dir="rtl"] .nav-menu {
+  /* Reverses flex order naturally, but if margin is needed: */
+}
+
+html[dir="rtl"] .card-icon {
+  /* Adjust margins if icon is inline */
+}
