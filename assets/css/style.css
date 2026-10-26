@@ -163,17 +163,24 @@ img {
 .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
 
 .flex { display: flex; }
+.inline-flex { display: inline-flex; }
 .flex-col { flex-direction: column; }
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
 .flex-wrap { flex-wrap: wrap; }
+.gap-2 { gap: var(--space-2); }
 .gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
 .gap-8 { gap: var(--space-8); }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.w-full { width: 100%; }
 
 /* Spacing Helpers */
 .mt-0 { margin-top: 0; }
 .mb-0 { margin-bottom: 0; }
+.mt-2 { margin-top: var(--space-2); }
+.mb-2 { margin-bottom: var(--space-2); }
 .mt-4 { margin-top: var(--space-4); }
 .mb-4 { margin-bottom: var(--space-4); }
 .mt-8 { margin-top: var(--space-8); }
@@ -187,32 +194,33 @@ img {
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
+.text-xs { font-size: 0.75rem; }
 .text-sm { font-size: 0.875rem; }
 .text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
 .font-bold { font-weight: 700; }
 .font-medium { font-weight: 500; }
 .text-primary { color: var(--primary-color); }
 .text-accent { color: var(--accent-color); }
 
-/* Hide on Desktop, show on mobile */
-.d-lg-none { display: none; }
-@media (max-width: 1024px) {
-  .d-lg-block { display: none; }
-  .d-lg-none { display: block; }
-}
-
 /* Responsive Overrides */
 @media (max-width: 1024px) {
   h1 { font-size: 2.75rem; }
   h2 { font-size: 2rem; }
-  .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   h1 { font-size: 2.25rem; }
   h2 { font-size: 1.75rem; }
-  .grid-cols-2 { grid-template-columns: 1fr; }
-  .section { padding: var(--space-16) 0; }
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+  .section { padding: var(--space-12) 0; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.5rem; }
+  .section { padding: var(--space-10) 0; }
 }
 
 /* ==========================================================================

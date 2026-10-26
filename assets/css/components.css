@@ -42,6 +42,38 @@
   color: #ffffff;
 }
 
+.btn-outline-white {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn-outline-white:hover {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Badge / Pill
+   ========================================================================== */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+  max-width: max-content;
+  line-height: 1.2;
+}
+
 /* ==========================================================================
    Cards
    ========================================================================== */
@@ -110,7 +142,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%; /* Task #2: Prevent scrollbar overlap */
+  width: 100%;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
   transition: background-color var(--transition-normal);
@@ -120,10 +152,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px; /* Task #17: Desktop height */
+  min-height: 76px;
+  gap: var(--space-4);
 }
 
-/* Dropdown alignment (Task #13) */
+/* Dropdown alignment */
 .dropdown {
   position: relative;
 }
@@ -131,22 +164,24 @@
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
+  min-width: 180px;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   display: none;
   z-index: 1001;
+  padding: 0.25rem 0;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 .dropdown-item {
   display: block;
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-2) var(--space-4);
   color: var(--text-primary);
   text-decoration: none;
+  font-size: 0.9rem;
   transition: background-color var(--transition-fast);
 }
 .dropdown-item:hover {
@@ -159,6 +194,11 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-brand span {
@@ -167,22 +207,169 @@
 
 .nav-menu {
   display: flex;
-  gap: var(--space-6); /* Task #15: Equal consistent spacing */
+  gap: var(--space-4);
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
   color: var(--text-primary);
   font-weight: 500;
+  font-size: 0.95rem;
   padding: var(--space-2) var(--space-3);
   display: inline-flex;
   align-items: center;
-  min-height: 48px; /* Task #9: Consistent height */
+  min-height: 40px;
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--primary-color);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.nav-toggles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-toggle-btn {
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.icon-toggle-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.icon-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 1024px) {
+  .navbar .container {
+    min-height: 68px;
+    gap: var(--space-2);
+  }
+  .nav-menu {
+    gap: 0.35rem;
+  }
+  .nav-link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  .nav-actions .btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.875rem;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: auto;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-size: 1.35rem;
+  }
+  .nav-actions {
+    gap: 0.35rem;
+  }
+  .nav-actions .btn {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    min-height: 36px;
+  }
+  .icon-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .icon-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.35rem;
+    padding: 0.4rem 0 0.15rem;
+    margin-top: 0.35rem;
+    border-top: 1px solid var(--border-color);
+  }
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-link {
+    padding: 0.25rem 0.65rem;
+    font-size: 0.825rem;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    min-height: 32px;
+  }
+  .nav-link.active {
+    background: rgba(79, 70, 229, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+}
+
+/* ==========================================================================
+   Insight Cards (Straight-line alignment)
+   ========================================================================== */
+.insight-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.insight-card-title {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  min-height: 3.4rem;
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: flex-start;
+}
+
+.insight-card-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  min-height: 2.8rem;
 }
 
 /* ==========================================================================
@@ -190,8 +377,9 @@
    ========================================================================== */
 .footer {
   background-color: var(--bg-secondary);
-  padding: var(--space-16) 0 var(--space-8);
+  padding: var(--space-12) 0 var(--space-6);
   border-top: 1px solid var(--border-color);
+  margin-top: 0 !important;
 }
 
 .footer-grid {
@@ -216,7 +404,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--accent-color); /* Task #21: Improve hover color visibility */
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
@@ -230,10 +418,9 @@
 
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .navbar .container { height: 64px; } /* Task #17: Mobile height */
 }
-@media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-6); }
 }
 
 /* ==========================================================================
@@ -257,22 +444,4 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Transparent Icon Buttons for Navbar */
-.icon-toggle-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-.icon-toggle-btn:hover {
-  background: var(--bg-tertiary);
-  color: var(--primary-color);
 }

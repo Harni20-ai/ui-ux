@@ -31,8 +31,7 @@
     <!-- Header -->
     <header class="navbar">
         <div class="container flex justify-between items-center">
-            <!-- Task #8: Clickable logo to home, no 'Back to home' text -->
-            <a href="index.html" class="nav-brand" style="display: flex; align-items: center; gap: 8px;">
+            <a href="index.html" class="nav-brand">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="9" cy="12" r="7" fill="var(--primary-color)" fill-opacity="0.8"/>
                     <circle cx="15" cy="12" r="7" fill="var(--accent-color)" fill-opacity="0.8"/>
@@ -40,7 +39,7 @@
                 Aura<span>.</span>
             </a>
             
-            <nav id="navMenu" class="nav-menu d-lg-block">
+            <nav id="navMenu" class="nav-menu">
                 <div class="dropdown">
                     <a href="index.html" class="nav-link" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
                         Home
@@ -58,20 +57,16 @@
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             
-            <div class="flex items-center gap-4">
-                
-                <div class="nav-toggles flex items-center gap-4">
-                    <button id="darkModeToggle" class="icon-toggle-btn" aria-label="Toggle Theme" >
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <div class="nav-actions">
+                <div class="nav-toggles">
+                    <button id="darkModeToggle" class="icon-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                     </button>
-                    <button id="rtlToggle" class="icon-toggle-btn" aria-label="Toggle RTL" >
+                    <button id="rtlToggle" class="icon-toggle-btn" aria-label="Toggle RTL" title="Toggle Direction">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                     </button>
                 </div>
-                <a href="contact.html" class="btn btn-primary d-lg-block">Start Project</a>
-                <button id="mobileMenuBtn" class="btn btn-secondary d-lg-none" aria-label="Menu">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
+                <a href="contact.html" class="btn btn-primary">Start Project</a>
             </div>
         </div>
     </header>
@@ -120,7 +115,7 @@
                 <div>
                     <h4 class="h5 mb-4">Connect with us</h4>
                     <!-- Task #14: Branded social login/connect buttons on contact page -->
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 flex-wrap">
                         <a href="#" class="btn btn-secondary" style="border-color: #1DA1F2; color: #1DA1F2;">Twitter</a>
                         <a href="#" class="btn btn-secondary" style="border-color: #0A66C2; color: #0A66C2;">LinkedIn</a>
                         <a href="#" class="btn btn-secondary" style="border-color: #EA4C89; color: #EA4C89;">Dribbble</a>
@@ -132,7 +127,7 @@
 
     <!-- Section 3: Map -->
     <section class="section section-alt pb-0 pt-0">
-        <div style="width: 100%; height: 450px; background-color: var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); overflow: hidden;">
+        <div style="width: 100%; height: clamp(260px, 40vh, 450px); background-color: var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); overflow: hidden;">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617351659132!2d-74.00164808459424!3d40.74844444332924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bb64dc9cd7%3A0xc6c764e427ed3199!2sChelsea%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1655385614353!5m2!1sen!2sus" width="100%" height="100%" style="border:0; filter: grayscale(100%) contrast(1.1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
@@ -195,14 +190,13 @@
     <section class="section text-center" style="background-color: var(--primary-color); color: white;">
         <div class="container">
             <h2 class="mb-4" style="color: white;">Ready to start?</h2>
-            <p class="mb-8 text-lg" style="color: rgba(255,255,255,0.8);">We're currently accepting new projects for Q4.</p>
-            <a href="contact.html" class="btn btn-secondary" style="border-color: white; color: white;">Start Project</a>
+            <p class="mb-8 text-lg" style="color: rgba(255,255,255,0.85);">We're currently accepting new projects for Q4.</p>
+            <a href="contact.html" class="btn btn-outline-white">Start Project</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <!-- Footer -->
-    <footer class="footer" style="background-color: var(--bg-tertiary); padding: var(--space-12) 0 var(--space-6); margin-top: var(--space-12); border-top: 1px solid var(--border-color);">
+    <footer class="footer" style="background-color: var(--bg-tertiary); padding: var(--space-12) 0 var(--space-6); margin-top: 0; border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="grid grid-cols-4 gap-8 mb-12">
                 <!-- Column 1: Brand & Info -->

@@ -3,16 +3,29 @@
    ========================================================================== */
 
 html[dir="rtl"] {
-  /* Adjust spacing that depends on direction */
+  direction: rtl;
+  text-align: right;
 }
 
 html[dir="rtl"] .text-left { text-align: right; }
 html[dir="rtl"] .text-right { text-align: left; }
 
-html[dir="rtl"] .nav-menu {
-  /* Reverses flex order naturally, but if margin is needed: */
+html[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+  text-align: right;
 }
 
-html[dir="rtl"] .card-icon {
-  /* Adjust margins if icon is inline */
+html[dir="rtl"] .btn svg:not(.no-rtl),
+html[dir="rtl"] a svg:not(.no-rtl) {
+  transform: scaleX(-1);
 }
+
+html[dir="rtl"] .nav-brand {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .footer {
+  text-align: right;
+}
+

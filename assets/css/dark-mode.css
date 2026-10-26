@@ -57,3 +57,21 @@
 .dark .btn-primary:hover {
   color: #0F1115 !important;
 }
+
+.dark .btn-outline-white:hover {
+  background-color: #ffffff !important;
+  color: #0F1115 !important;
+  border-color: #ffffff !important;
+}
+
+.dark .icon-toggle-btn {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.dark .icon-toggle-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
